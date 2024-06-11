@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            background-color: #333333;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 80%;
+        }
+        button {
+            background-color: #333333;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Task</h1>
+        <form action="{{ url_for('edit', id=todo.id) }}" method="post">
+            <label for="todo">Task:</label>
+            <input type="text" id="todo" name="todo" value="{{ todo.task }}" required>
+            <br>
+            <label for="task_date">Date:</label>
+            <input type="date" id="task_date" name="task_date" value="{{ todo.task_date }}" required>
+            <br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>
